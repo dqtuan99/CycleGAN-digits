@@ -27,5 +27,5 @@ def generate_imgs(a, b, ab_gen, ba_gen, samples_path, a_name, b_name, epoch=0):
     a_imgs_ = vutils.make_grid(a_imgs, normalize=True, nrow=rows)
     b_imgs_ = vutils.make_grid(b_imgs, normalize=True, nrow=rows)
 
-    vutils.save_image(a_imgs_, os.path.join(samples_path, '{}_to_{}_{}.png'.format(a_name, b_name, epoch)))
-    vutils.save_image(b_imgs_, os.path.join(samples_path, '{}_to_{}_{}.png'.format(b_name, a_name, epoch)))
+    vutils.save_image(a_imgs_, os.path.join(samples_path[0], f'{a_name}_to_{b_name}_ep_{epoch}.png'))
+    vutils.save_image(b_imgs_, os.path.join(samples_path[1], f'{b_name}_to_{a_name}_ep_{epoch}.png'))
